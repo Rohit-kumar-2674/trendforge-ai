@@ -1,0 +1,33 @@
+name: Security checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '23 4 * * 1'
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -r backend/requirements-dev.lock
+      - name: Python dependency and source scanning
+        run: |
+          pip-audit -r backend/requirements.lock
+          bandit -r backend/trendforge -x backend/trendforge/migrations -ll
+      - name: Node dependency scanning
+        working-directory: frontend
+        run: |
+          npm ci --no-audit
+          npm audit --omit=dev --audit-level=high
+      - name: Local links and secret-pattern scanning
+        run: python scripts/verify_repository.py

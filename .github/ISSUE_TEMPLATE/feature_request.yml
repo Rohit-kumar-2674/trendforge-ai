@@ -1,0 +1,18 @@
+name: Feature request
+description: Propose a feature, domain or data provider.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What research question does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Data source, access and license
+      description: Link to official documentation and describe what can lawfully be stored and displayed.
+  - type: textarea
+    id: validation
+    attributes:
+      label: How would we evaluate it without leakage?

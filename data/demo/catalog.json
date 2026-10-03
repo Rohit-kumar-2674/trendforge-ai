@@ -1,0 +1,280 @@
+{
+  "synthetic": true,
+  "generator": "deterministic-v1",
+  "start": "2025-01-01T23:59:00Z",
+  "seed_base": 2674,
+  "entities": [
+    {
+      "id": "demo:smart-glasses",
+      "name": "AI smart glasses",
+      "domain": "technology",
+      "category": "Wearables",
+      "region": "GLOBAL",
+      "keywords": [
+        "smart glasses",
+        "Wearables",
+        "AI smart glasses"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:local-models",
+      "name": "Local language models",
+      "domain": "technology",
+      "category": "Artificial intelligence",
+      "region": "GLOBAL",
+      "keywords": [
+        "local models",
+        "Artificial intelligence",
+        "Local language models"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:vectorflow",
+      "name": "VectorFlow / open source",
+      "domain": "technology",
+      "category": "Developer tools",
+      "region": "GLOBAL",
+      "keywords": [
+        "vectorflow",
+        "Developer tools",
+        "VectorFlow / open source"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:rust-tools",
+      "name": "Rust developer tools",
+      "domain": "technology",
+      "category": "Programming",
+      "region": "GLOBAL",
+      "keywords": [
+        "rust tools",
+        "Programming",
+        "Rust developer tools"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:cherry-red",
+      "name": "Cherry red clothing",
+      "domain": "fashion",
+      "category": "Color",
+      "region": "IN",
+      "keywords": [
+        "cherry red",
+        "Color",
+        "Cherry red clothing"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:wide-leg",
+      "name": "Wide-leg denim",
+      "domain": "fashion",
+      "category": "Silhouette",
+      "region": "GLOBAL",
+      "keywords": [
+        "wide leg",
+        "Silhouette",
+        "Wide-leg denim"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:retro-runners",
+      "name": "Retro running shoes",
+      "domain": "fashion",
+      "category": "Footwear",
+      "region": "IN",
+      "keywords": [
+        "retro runners",
+        "Footwear",
+        "Retro running shoes"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:ai-filmmaking",
+      "name": "AI filmmaking",
+      "domain": "youtube",
+      "category": "Creator topics",
+      "region": "GLOBAL",
+      "keywords": [
+        "ai filmmaking",
+        "Creator topics",
+        "AI filmmaking"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:slow-living",
+      "name": "Slow living videos",
+      "domain": "youtube",
+      "category": "Creator topics",
+      "region": "GLOBAL",
+      "keywords": [
+        "slow living",
+        "Creator topics",
+        "Slow living videos"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:study-streams",
+      "name": "Study with me",
+      "domain": "youtube",
+      "category": "Education",
+      "region": "IN",
+      "keywords": [
+        "study streams",
+        "Education",
+        "Study with me"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:orbital",
+      "name": "ORBT \u00b7 Orbital Systems",
+      "domain": "stocks",
+      "category": "Technology",
+      "region": "US",
+      "keywords": [
+        "orbital",
+        "Technology",
+        "ORBT \u00b7 Orbital Systems"
+      ],
+      "primary_metric": "close",
+      "unit": "USD",
+      "cadence": "trading_session",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:cedar",
+      "name": "CEDR \u00b7 Cedar Retail",
+      "domain": "stocks",
+      "category": "Consumer",
+      "region": "US",
+      "keywords": [
+        "cedar",
+        "Consumer",
+        "CEDR \u00b7 Cedar Retail"
+      ],
+      "primary_metric": "close",
+      "unit": "USD",
+      "cadence": "trading_session",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:himalaya",
+      "name": "HIMA \u00b7 Himalaya Energy",
+      "domain": "stocks",
+      "category": "Energy",
+      "region": "IN",
+      "keywords": [
+        "himalaya",
+        "Energy",
+        "HIMA \u00b7 Himalaya Energy"
+      ],
+      "primary_metric": "close",
+      "unit": "INR",
+      "cadence": "trading_session",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:solar-search",
+      "name": "Rooftop solar searches",
+      "domain": "search",
+      "category": "Energy",
+      "region": "IN",
+      "keywords": [
+        "solar search",
+        "Energy",
+        "Rooftop solar searches"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:kdrama",
+      "name": "Hidden-identity K-dramas",
+      "domain": "entertainment",
+      "category": "Television",
+      "region": "IN",
+      "keywords": [
+        "kdrama",
+        "Television",
+        "Hidden-identity K-dramas"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    },
+    {
+      "id": "demo:cozy-games",
+      "name": "Cozy exploration games",
+      "domain": "entertainment",
+      "category": "Gaming",
+      "region": "GLOBAL",
+      "keywords": [
+        "cozy games",
+        "Gaming",
+        "Cozy exploration games"
+      ],
+      "primary_metric": "interest",
+      "unit": "synthetic index",
+      "cadence": "calendar_day",
+      "synthetic": true,
+      "analytics_allowed": true
+    }
+  ]
+}

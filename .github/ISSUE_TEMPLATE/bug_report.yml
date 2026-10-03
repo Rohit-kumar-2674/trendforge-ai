@@ -1,0 +1,21 @@
+name: Bug report
+description: Report a reproducible problem without secrets or licensed raw data.
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include OS, Python/Node versions, data mode and sanitized logs.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and screenshots
+      description: Do not paste API keys, private records, or restricted provider datasets.

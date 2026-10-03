@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trendforge-ai"
+version = "0.1.0"
+description = "Auditable, multi-domain trend intelligence and probabilistic forecasting"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "pydantic-settings>=2.6,<3",
+  "sqlalchemy>=2.0.36,<3", "alembic>=1.14,<2", "numpy>=2.1,<3",
+  "pandas>=2.2,<4", "scikit-learn>=1.6,<2", "httpx>=0.28,<1",
+  "typer>=0.15,<1", "pyyaml>=6.0.2,<7", "tzdata>=2025.1",
+]
+
+[project.optional-dependencies]
+postgres = ["psycopg[binary]>=3.2,<4"]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "pytest-cov>=6,<8", "respx>=0.22,<1", "ruff>=0.9,<1", "mypy>=1.14,<3", "types-PyYAML>=6", "bandit>=1.8,<2", "pip-audit>=2.8,<3"]
+
+[project.scripts]
+trendforge = "trendforge.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["trendforge*"]
+
+[tool.setuptools.package-data]
+trendforge = ["config/*.yaml", "migrations/*.py", "migrations/versions/*.py", "migrations/*.mako"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["trendforge"]
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+exclude = ["tests", "migrations"]

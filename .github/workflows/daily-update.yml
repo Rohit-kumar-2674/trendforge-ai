@@ -1,0 +1,54 @@
+name: Daily trend update
+on:
+  schedule:
+    - cron: '17 1 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: trendforge-persistent-state
+  cancel-in-progress: false
+jobs:
+  update:
+    # Never place restricted live datasets in a public repository's artifacts.
+    if: github.event.repository.private || vars.TRENDFORGE_DEMO_MODE != 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DEMO_MODE: ${{ vars.TRENDFORGE_DEMO_MODE || 'true' }}
+      DATABASE_URL: sqlite:///./data/trendforge.db
+      FINANCE_SYMBOLS: ${{ vars.FINANCE_SYMBOLS || 'IBM' }}
+      GITHUB_REPOS: ${{ vars.GITHUB_REPOS }}
+      ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Raw YouTube API data is intentionally excluded from persisted workflow artifacts.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: backend/requirements.lock
+      - run: |
+          python -m pip install -r backend/requirements.lock
+          python -m pip install --no-deps -e backend
+      - name: Restore prior observations and immutable forecast ledger
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/restore_workflow_state.py
+      - name: Ingest, validate, analyze, forecast, evaluate matured outcomes and report
+        run: python -m trendforge update
+      - name: Preserve cumulative state
+        uses: actions/upload-artifact@v4
+        with:
+          name: trendforge-state
+          path: data/trendforge.db
+          retention-days: 90
+          if-no-files-found: error
+      - name: Preserve timestamped reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: trendforge-daily-report
+          path: reports/
+          retention-days: 30

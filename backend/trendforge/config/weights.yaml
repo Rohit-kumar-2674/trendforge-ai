@@ -1,0 +1,39 @@
+# Scores are heuristic indices, NOT calibrated probabilities.
+# Missing features stay unavailable; available weights are renormalized.
+default:
+  momentum: 0.25
+  acceleration: 0.20
+  persistence: 0.20
+  novelty: 0.10
+  anomaly: 0.10
+  source_diversity: 0.05
+  engagement: 0.05
+  search: 0.05
+stocks:
+  momentum: 0.30
+  acceleration: 0.15
+  persistence: 0.20
+  volume: 0.15
+  anomaly: 0.10
+  source_diversity: 0.10
+youtube:
+  momentum: 0.25
+  acceleration: 0.25
+  persistence: 0.15
+  engagement: 0.15
+  breadth: 0.10
+  source_diversity: 0.10
+technology:
+  momentum: 0.25
+  acceleration: 0.20
+  persistence: 0.20
+  novelty: 0.15
+  breadth: 0.10
+  source_diversity: 0.10
+fashion:
+  momentum: 0.20
+  acceleration: 0.20
+  persistence: 0.15
+  novelty: 0.15
+  search: 0.15
+  source_diversity: 0.15
