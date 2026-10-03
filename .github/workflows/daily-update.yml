@@ -40,14 +40,14 @@ jobs:
       - name: Ingest, validate, analyze, forecast, evaluate matured outcomes and report
         run: python -m trendforge update
       - name: Preserve cumulative state
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: trendforge-state
           path: data/trendforge.db
           retention-days: 90
           if-no-files-found: error
       - name: Preserve timestamped reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: trendforge-daily-report
           path: reports/
